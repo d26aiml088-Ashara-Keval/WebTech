@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            margin: 0;
+            transition: 0.3;
+        }
+        .dark{
+            background: black;
+            color: white;
+        }
+
+        .banner{
+            background: orange;
+            padding: 10px;
+            text-align : center;
+        }
+
+        nav{
+            background: blue;
+            color: white;
+            padding: 10px;
+        }
+        .menu{
+            display: none;
+        }
+
+        .menu a{
+            display: block;
+            color: black;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        .answer{
+            display: none;
+            padding: 10px;
+            background: white;
+        }
+    </style>
+<title>FAQ</title>
+</head>
+
+<body>
+
+    <div class="banner">
+        Welcome to javascript Ui demo
+    </div>
+
+    <nav>
+        <button onclick="menu()">||| Menu</button>
+        <button onclick="theme()">Theme</button>
+    </nav>
+
+    <div class="menu" id="menu">
+        <a href = "#">Home</a>
+        <a href = "#">About</a>
+        <a href = "#">Contact</a>
+    </div>
+
+    <h2>Collapsible</h2>
+
+    <button onclick="m()">How many club activites are their</button>
+
+    <h2>Modal Popup</h2>
+    <button onclick="openModel()">Open Popup</button>
+
+    <div class="Model" id="Model">
+        <h3>Hellow</h3>
+        <p>
+            This is a model popup
+        </p>
+        <button onclick="closeModel">Close</button>
+    </div>
+<script>
+
+    function menu(){
+        var m=document.getElementById("menu");
+
+        if(m.style.display=="block")
+            m.style.display="none";
+        else{
+            m.style.display="block";
+        }
+    }
+    function theme(){
+        document.body.classList.toggle("dark");
+    }
+
+    function m(){
+        var a =document.getElementById("ans");
+
+        if(a.style.display=="block")
+            a.style.display = none;
+    }
+
+    function openModel(){
+        document.GetElementById("model").style.display="block"
+    }
+
+    function closeModel(){
+        document.GetElementById("model").style.display="Not Block"
+    }
+</script>
+
+</body>
+</html>
