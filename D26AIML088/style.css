@@ -135,12 +135,12 @@ h2 {
 
 h1 {
     margin-bottom: 14px;
-    font-size: clamp(2.25rem, 9vw, 4.4rem);
+    font-size: 2.5rem;
     letter-spacing: 0;
 }
 
 h2 {
-    font-size: clamp(1.65rem, 5vw, 2.35rem);
+    font-size: 1.9rem;
     letter-spacing: 0;
 }
 
@@ -339,7 +339,7 @@ h3 {
 }
 
 .page-intro h1 {
-    font-size: clamp(2.15rem, 8vw, 3.5rem);
+    font-size: 2.35rem;
 }
 
 .registration-layout {
@@ -507,6 +507,18 @@ h3 {
 }
 
 @media (min-width: 640px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    .page-intro h1 {
+        font-size: 3rem;
+    }
+
     .header-inner {
         flex-direction: row;
         align-items: center;
@@ -563,6 +575,10 @@ h3 {
 }
 
 @media (min-width: 900px) {
+    h1 {
+        font-size: 4rem;
+    }
+
     .page-shell {
         padding-top: 44px;
     }
