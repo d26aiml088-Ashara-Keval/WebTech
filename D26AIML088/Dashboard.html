@@ -1,8 +1,56 @@
-<h1>Dashboard</h1>
-<p>Welcome to the Student Hub Dashboard.</p>
-<link rel="stylesheet" href="style.css">
-<ul>
-    <li>Total Courses Enrolled: 5</li>
-    <li>Upcoming Events: 2</li>
-    <li>Pending Assignments: 3</li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Hub | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="Dashboard.html" aria-current="page">Dashboard</a>
+                <a href="events.html">Events</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page-shell">
+        <header class="page-intro">
+            <p class="eyebrow">Your overview</p>
+            <h1>Dashboard</h1>
+            <p class="lede">Welcome back to your Student Hub. Here’s what’s coming up.</p>
+        </header>
+        <section class="stats-grid" aria-label="Student overview">
+            <article class="stat-card"><span class="stat-value">5</span><span class="stat-label">Courses enrolled</span></article>
+            <article class="stat-card"><span class="stat-value">2</span><span class="stat-label">Upcoming events</span></article>
+            <article class="stat-card"><span class="stat-value">3</span><span class="stat-label">Pending assignments</span></article>
+        </section>
+        <div class="dashboard-layout dashboard-section">
+            <section class="content-panel" aria-labelledby="focus-title">
+                <p class="eyebrow">Keep moving</p>
+                <h2 id="focus-title">Your next steps</h2>
+                <ul>
+                    <li>Review your upcoming assignment deadlines.</li>
+                    <li>Explore the next campus workshop.</li>
+                    <li>Check in on your courses for the week.</li>
+                </ul>
+            </section>
+            <aside class="content-panel">
+                <p class="eyebrow">Coming up</p>
+                <h2>Make time to connect</h2>
+                <p>Workshops and campus events are a good way to learn something new and meet fellow students.</p>
+                <p><a class="button-link" href="events.html">View all events</a></p>
+            </aside>
+        </div>
+    </main>
+    <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
+</body>
+</html>

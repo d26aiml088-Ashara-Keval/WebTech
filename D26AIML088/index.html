@@ -1,35 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <LINK rel="stylesheet" href="style.css">
-
-    <title>
-        Student Hub
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Hub | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <center><header><H1>Student Hub</H1></center>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="events.html">Events</a>
-        <a href="profile.html">Profile</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="admin.html">Admin</a>
-        <a href="faq.html">Faq</a>
-    </nav>
-    <section>
-            <div>student queries</div>
-            <div>cub queries</div>
-            <div>event queries</div>
-            <div>fourth</div>
-    </section>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="Dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+            </nav>
+        </div>
     </header>
-    <center><image src="monstera.webp"></image></center>
+    <main class="page-shell">
+        <section class="hero" aria-labelledby="home-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Your campus, in one place</p>
+                <h1 id="home-title">Make room for what’s next.</h1>
+                <p class="lede">Find learning support, stay on top of campus events, and keep your student essentials close at hand.</p>
+                <a class="button-link" href="register.html">Join the Student Hub</a>
+            </div>
+            <aside class="hero-visual" aria-label="A note about the Student Hub">
+                <p class="visual-note">A little more connected. A lot more ready.</p>
+                <span class="visual-stamp">LEARN<br>TOGETHER</span>
+            </aside>
+        </section>
+        <section aria-labelledby="explore-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Start here</p>
+                    <h2 id="explore-title">Explore your hub</h2>
+                </div>
+                <p>Useful things for every part of student life.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <span class="feature-index" aria-hidden="true">01</span>
+                    <h3>Learning support</h3>
+                    <p>Find study notes, mock tests, and practical help with your coursework.</p>
+                    <a href="about.html">See what’s available</a>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-index" aria-hidden="true">02</span>
+                    <h3>Campus events</h3>
+                    <p>Discover workshops, meetups, and opportunities to try something new.</p>
+                    <a href="events.html">Browse events</a>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-index" aria-hidden="true">03</span>
+                    <h3>Your dashboard</h3>
+                    <p>Get a clear snapshot of courses, upcoming events, and assignments.</p>
+                    <a href="Dashboard.html">Open dashboard</a>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-index" aria-hidden="true">04</span>
+                    <h3>Student services</h3>
+                    <p>Get help with registration, official letters, and student ID requests.</p>
+                    <a href="register.html">Get started</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
 </body>
 </html>

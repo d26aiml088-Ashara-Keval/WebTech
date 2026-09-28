@@ -1,7 +1,67 @@
-<h1>Events</h1>
-<link rel="stylesheet" href="style.css">
-<h3>Upcoming Events</h3>
-<ul>
-    <li>Web Development Workshop - Aug 15</li>
-    <li>Hackathon - Aug 25</li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Hub | Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="Dashboard.html">Dashboard</a>
+                <a href="events.html" aria-current="page">Events</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page-shell">
+        <header class="page-intro">
+            <p class="eyebrow">Meet, make, discover</p>
+            <h1>Events on campus</h1>
+            <p class="lede">Pick up a new skill, find a team, or just see what’s happening around you.</p>
+        </header>
+        <section aria-labelledby="upcoming-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Coming soon</p>
+                    <h2 id="upcoming-title">Upcoming events</h2>
+                </div>
+                <p>Save a date and join in.</p>
+            </div>
+            <div class="event-grid">
+                <article class="event-card">
+                    <time class="event-date" datetime="2026-08-15"><span>Aug</span><strong>15</strong></time>
+                    <div>
+                        <h3>Web Development Workshop</h3>
+                        <p class="event-meta">Workshop · Open to all students</p>
+                        <p>Build practical web skills and learn alongside fellow students.</p>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <time class="event-date" datetime="2026-08-25"><span>Aug</span><strong>25</strong></time>
+                    <div>
+                        <h3>Campus Hackathon</h3>
+                        <p class="event-meta">Hackathon · Bring a team or join one</p>
+                        <p>Team up, share ideas, and make a project together.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="dashboard-section content-panel">
+            <p class="eyebrow">New around campus?</p>
+            <h2>Find your way in</h2>
+            <p>Register with Student Hub to keep campus resources and updates in one place.</p>
+            <a class="button-link" href="register.html">Register for the hub</a>
+        </section>
+    </main>
+    <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
+</body>
+</html>

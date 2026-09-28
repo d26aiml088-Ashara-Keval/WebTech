@@ -1,18 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-        p{
-            color: cyan;
-            
-        } html{
-            background-color: darkslategray;
-        } h1{
-            color: darkgrey;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Hub | About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<h1>What Can you do here?</h1>
-<p>Finding free study notes and learning materials</p>
-  <p>  Getting help with administrative tasks and registration</p>
-   <p> Requesting official letters and student ID replacements</p>
-   <p> Accessing career advice and job counseling</p>
-    <p>Practicing with mock tests and exam prep tools</p>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html" aria-current="page">About</a>
+                <a href="register.html">Register</a>
+                <a href="Dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page-shell">
+        <header class="page-intro">
+            <p class="eyebrow">About the hub</p>
+            <h1>Student life, with fewer loose ends.</h1>
+            <p class="lede">Student Hub brings academic resources and campus services together, so it’s easier to find the support you need and make the most of your time here.</p>
+        </header>
+        <section class="about-layout" aria-label="About Student Hub">
+            <article class="content-panel">
+                <h2>What you can do here</h2>
+                <div class="about-grid">
+                    <div>
+                        <h3>Learn with confidence</h3>
+                        <p>Find free study notes, learning materials, mock tests, and exam preparation tools.</p>
+                    </div>
+                    <div>
+                        <h3>Get practical help</h3>
+                        <p>Get guidance with administrative tasks, registration, official letters, and student ID replacements.</p>
+                    </div>
+                    <div>
+                        <h3>Plan your next step</h3>
+                        <p>Explore career advice and job counseling as you think about what comes after your studies.</p>
+                    </div>
+                    <div>
+                        <h3>Find your people</h3>
+                        <p>Keep up with campus events and discover ways to learn and connect with other students.</p>
+                    </div>
+                </div>
+            </article>
+            <aside class="content-panel">
+                <p class="eyebrow">Made for students</p>
+                <h2>One starting point</h2>
+                <p>Whether you’re preparing for an exam or looking for your next campus event, the hub helps you find a clear next step.</p>
+                <p><a class="button-link" href="register.html">Create your account</a></p>
+            </aside>
+        </section>
+    </main>
+    <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
+</body>
+</html>

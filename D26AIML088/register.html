@@ -1,45 +1,96 @@
-
-    <LINK rel="stylesheet" href="style.css">
-    <form>
-    <label>Full Name</label><br>
-    <input type="text" placeholder="enter your full name"><br><br>
-
-     <label>Enrollment Number</label><br>
-    <input type="text" placeholder="enter your Enrollment Number"><br><br>
-
-     <label>Email</label><br>
-    <input type="email" placeholder="enter your Email"><br><br>
-
-     <label>Password</label><br>
-    <input type="password" placeholder="enter your Password"><br><br>
-
-    <label>Gender</label><br>
-    <input type="radio" name="gender">Male
-    <input type="radio" name="gender">Female
-    <input type="radio" name="gender">Other<br><br>
-
-    <label>Department</label><br>
-    <select>
-        <option>CE</option>
-        <option>IT</option>
-        <option>AIML</option>
-        <option>CSE</option>   
-    </select><br><br>
-
-    <label>Hobbies</label><br>
-        <input type="checkbox">Singing
-        <input type="checkbox">Gardening
-        <input type="checkbox">Dancing<br><br>
-
-    <label>Adress</label><br>
-    <textarea rows="4" cols="10"></textarea><br><br>
-
-    <input type="submit" value="submit">
-    <input type="Reset" value="reset">
-    
-
-</form>
-
-<form ation="about.html" target="_blank" method="post">
-    <input type="submit">Submit
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Hub | Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html" aria-current="page">Register</a>
+                <a href="Dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page-shell">
+        <header class="page-intro">
+            <p class="eyebrow">Get connected</p>
+            <h1>Create your student account</h1>
+            <p class="lede">Set up your profile to keep campus resources and updates close at hand.</p>
+        </header>
+        <div class="registration-layout">
+            <form class="registration-form" action="about.html" method="get">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="full-name">Full name</label>
+                        <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="enrollment">Enrollment number</label>
+                        <input id="enrollment" name="enrollment" type="text" placeholder="Your enrollment number" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email address</label>
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="department">Department</label>
+                        <select id="department" name="department" required>
+                            <option value="" selected disabled>Select a department</option>
+                            <option value="CE">CE</option>
+                            <option value="IT">IT</option>
+                            <option value="AIML">AIML</option>
+                            <option value="CSE">CSE</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Your address"></textarea>
+                    </div>
+                    <fieldset class="choice-group form-field-wide">
+                        <legend class="form-legend">Gender</legend>
+                        <div class="choice-options">
+                            <label><input type="radio" name="gender" value="male"> Male</label>
+                            <label><input type="radio" name="gender" value="female"> Female</label>
+                            <label><input type="radio" name="gender" value="other"> Other</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="choice-group form-field-wide">
+                        <legend class="form-legend">Hobbies</legend>
+                        <div class="choice-options">
+                            <label><input type="checkbox" name="hobbies" value="singing"> Singing</label>
+                            <label><input type="checkbox" name="hobbies" value="gardening"> Gardening</label>
+                            <label><input type="checkbox" name="hobbies" value="dancing"> Dancing</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-actions">
+                    <button class="button-primary" type="submit">Create account</button>
+                    <button class="button-secondary" type="reset">Reset form</button>
+                </div>
+            </form>
+            <aside class="content-panel">
+                <p class="eyebrow">A good place to begin</p>
+                <h2>Bring your campus life together.</h2>
+                <p>Get to student resources, upcoming events, and support services from one starting point.</p>
+                <p><a href="about.html">Learn more about the hub</a></p>
+            </aside>
+        </div>
+    </main>
+    <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
+</body>
+</html>
