@@ -1,111 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    <style>
-
-        body{
-            font-family: Arial;
-            margin: 0;
-            transition: 0.3;
-        }
-        .dark{
-            background: black;
-            color: white;
-        }
-
-        .banner{
-            background: orange;
-            padding: 10px;
-            text-align : center;
-        }
-
-        nav{
-            background: blue;
-            color: white;
-            padding: 10px;
-        }
-        .menu{
-            display: none;
-        }
-
-        .menu a{
-            display: block;
-            color: black;
-            padding: 5px;
-            text-decoration: none;
-        }
-
-        .answer{
-            display: none;
-            padding: 10px;
-            background: white;
-        }
-    </style>
-<title>FAQ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Hub | FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="Dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+                <a href="faq.html" aria-current="page">FAQ</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+                <a href="login.html">Login</a>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>Dark mode</button>
+        </div>
+    </header>
+    <main class="page-shell">
+        <header class="page-intro">
+            <p class="eyebrow">Support</p>
+            <h1>Frequently Asked Questions</h1>
+        </header>
+        <section class="content-panel">
+            <h3>How many club activities are there?</h3>
+            <p>There are several club activities each term, including workshops, technical events, and student community programs.</p>
 
-    <div class="banner">
-        Welcome to javascript Ui demo
-    </div>
+            <h3>How do I register?</h3>
+            <p>Go to the Register page and fill in your details to create your Student Hub account.</p>
 
-    <nav>
-        <button onclick="menu()">||| Menu</button>
-        <button onclick="theme()">Theme</button>
-    </nav>
+            <h3>Can I view my course updates?</h3>
+            <p>Yes, the dashboard gives you a quick overview of upcoming tasks, events, and important student information.</p>
+        </section>
+    </main>
+    <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
+    <script>
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            if (toggle) {
+                toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+                toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            }
+        };
 
-    <div class="menu" id="menu">
-        <a href = "#">Home</a>
-        <a href = "#">About</a>
-        <a href = "#">Contact</a>
-    </div>
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
 
-    <h2>Collapsible</h2>
-
-    <button onclick="m()">How many club activites are their</button>
-
-    <h2>Modal Popup</h2>
-    <button onclick="openModel()">Open Popup</button>
-
-    <div class="Model" id="Model">
-        <h3>Hellow</h3>
-        <p>
-            This is a model popup
-        </p>
-        <button onclick="closeModel">Close</button>
-    </div>
-<script>
-
-    function menu(){
-        var m=document.getElementById("menu");
-
-        if(m.style.display=="block")
-            m.style.display="none";
-        else{
-            m.style.display="block";
-        }
-    }
-    function theme(){
-        document.body.classList.toggle("dark");
-    }
-
-    function m(){
-        var a =document.getElementById("ans");
-
-        if(a.style.display=="block")
-            a.style.display = none;
-    }
-
-    function openModel(){
-        document.GetElementById("model").style.display="block"
-    }
-
-    function closeModel(){
-        document.GetElementById("model").style.display="Not Block"
-    }
-</script>
-
+        toggle?.addEventListener('click', () => {
+            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', nextTheme);
+            applyTheme(nextTheme);
+        });
+    </script>
 </body>
 </html>

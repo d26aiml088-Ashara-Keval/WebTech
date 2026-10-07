@@ -19,7 +19,14 @@
                 <a href="register.html">Register</a>
                 <a href="Dashboard.html">Dashboard</a>
                 <a href="events.html">Events</a>
+                <a href="faq.html">FAQ</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+                <a href="login.html">Login</a>
             </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>Dark mode</button>
         </div>
     </header>
     <main class="page-shell">
@@ -72,5 +79,26 @@
         </section>
     </main>
     <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
+    <script>
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            if (toggle) {
+                toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+                toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            }
+        };
+
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+        toggle?.addEventListener('click', () => {
+            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', nextTheme);
+            applyTheme(nextTheme);
+        });
+    </script>
 </body>
 </html>

@@ -19,7 +19,14 @@
                 <a href="register.html" aria-current="page">Register</a>
                 <a href="Dashboard.html">Dashboard</a>
                 <a href="events.html">Events</a>
+                <a href="faq.html">FAQ</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+                <a href="login.html">Login</a>
             </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>Dark mode</button>
         </div>
     </header>
     <main class="page-shell">
@@ -29,37 +36,65 @@
             <p class="lede">Set up your profile to keep campus resources and updates close at hand.</p>
         </header>
         <div class="registration-layout">
-            <form class="registration-form" method="post">
+            <form id="registrationForm" class="registration-form" novalidate>
                 <div class="form-grid">
                     <div class="form-field">
                         <label for="full-name">Full name</label>
-                        <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Your full name" required>
+                        <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Your full name">
+                        <small id="fullNameError" class="error-message" aria-live="polite"></small>
                     </div>
                     <div class="form-field">
                         <label for="enrollment">Enrollment number</label>
-                        <input id="enrollment" name="enrollment" type="text" placeholder="Your enrollment number" required>
+                        <input id="enrollment" name="enrollment" type="text" placeholder="Your enrollment number">
+                        <small id="enrollmentError" class="error-message" aria-live="polite"></small>
                     </div>
                     <div class="form-field">
                         <label for="email">Email address</label>
-                        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                        <small id="emailError" class="error-message" aria-live="polite"></small>
+                    </div>
+                    <div class="form-field">
+                        <label for="mobile">Mobile number</label>
+                        <input id="mobile" name="mobile" type="tel" inputmode="numeric" placeholder="10-digit mobile number">
+                        <small id="mobileError" class="error-message" aria-live="polite"></small>
                     </div>
                     <div class="form-field">
                         <label for="password">Password</label>
-                        <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required>
+                        <input id="password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters">
+                        <small id="passwordStrength" class="strength-text" aria-live="polite"></small>
+                        <small id="passwordError" class="error-message" aria-live="polite"></small>
                     </div>
                     <div class="form-field">
-                        <label for="department">Department</label>
-                        <select id="department" name="department" required>
-                            <option value="" selected disabled>Select a department</option>
-                            <option value="CE">CE</option>
-                            <option value="IT">IT</option>
-                            <option value="AIML">AIML</option>
-                            <option value="CSE">CSE</option>
+                        <label for="confirm-password">Confirm password</label>
+                        <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Re-enter your password">
+                        <small id="confirmPasswordError" class="error-message" aria-live="polite"></small>
+                    </div>
+                    <div class="form-field">
+                        <label for="course">Course</label>
+                        <select id="course" name="course">
+                            <option value="" selected disabled>Select a course</option>
+                            <option value="BCA">BCA</option>
+                            <option value="BSc">BSc</option>
+                            <option value="BTech">BTech</option>
+                            <option value="MCA">MCA</option>
                         </select>
+                        <small id="courseError" class="error-message" aria-live="polite"></small>
+                    </div>
+                    <div class="form-field">
+                        <label for="year">Year</label>
+                        <select id="year" name="year">
+                            <option value="" selected disabled>Select year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                        <small id="yearError" class="error-message" aria-live="polite"></small>
                     </div>
                     <div class="form-field">
                         <label for="address">Address</label>
                         <textarea id="address" name="address" rows="3" placeholder="Your address"></textarea>
+                        <small id="addressError" class="error-message" aria-live="polite"></small>
                     </div>
                     <fieldset class="choice-group form-field-wide">
                         <legend class="form-legend">Gender</legend>
@@ -68,21 +103,194 @@
                             <label><input type="radio" name="gender" value="female"> Female</label>
                             <label><input type="radio" name="gender" value="other"> Other</label>
                         </div>
+                        <small id="genderError" class="error-message" aria-live="polite"></small>
                     </fieldset>
                     <fieldset class="choice-group form-field-wide">
-                        <legend class="form-legend">Hobbies</legend>
+                        <legend class="form-legend">Terms and conditions</legend>
                         <div class="choice-options">
-                            <label><input type="checkbox" name="hobbies" value="singing"> Singing</label>
-                            <label><input type="checkbox" name="hobbies" value="gardening"> Gardening</label>
-                            <label><input type="checkbox" name="hobbies" value="dancing"> Dancing</label>
+                            <label><input type="checkbox" id="terms" name="terms"> I agree to the terms and conditions.</label>
                         </div>
+                        <small id="termsError" class="error-message" aria-live="polite"></small>
                     </fieldset>
                 </div>
+                <div id="formSuccess" class="success-message" aria-live="polite"></div>
                 <div class="form-actions">
                     <button class="button-primary" type="submit">Create account</button>
                     <button class="button-secondary" type="reset">Reset form</button>
                 </div>
             </form>
+            <script>
+                const registrationForm = document.getElementById('registrationForm');
+                const fullNameInput = document.getElementById('full-name');
+                const emailInput = document.getElementById('email');
+                const mobileInput = document.getElementById('mobile');
+                const passwordInput = document.getElementById('password');
+                const confirmPasswordInput = document.getElementById('confirm-password');
+                const courseInput = document.getElementById('course');
+                const yearInput = document.getElementById('year');
+                const genderInputs = document.querySelectorAll('input[name="gender"]');
+                const termsInput = document.getElementById('terms');
+                const successMessage = document.getElementById('formSuccess');
+                const passwordStrength = document.getElementById('passwordStrength');
+
+                const showError = (id, message) => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.textContent = message;
+                    }
+                };
+
+                const clearError = (id) => {
+                    showError(id, '');
+                };
+
+                const validateName = (value) => /^[A-Za-z ]{2,}$/.test(value.trim());
+                const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+                const validateMobile = (value) => /^[0-9]{10}$/.test(value.trim());
+                const validatePassword = (value) => /^(?=.*[A-Za-z])(?=.*\d).{8,}$/.test(value);
+
+                const updatePasswordStrength = () => {
+                    const value = passwordInput.value;
+                    const strengthText = passwordStrength;
+                    strengthText.className = 'strength-text';
+
+                    if (!value) {
+                        strengthText.textContent = '';
+                        return;
+                    }
+
+                    if (value.length < 6) {
+                        strengthText.textContent = 'Weak Password';
+                        strengthText.classList.add('weak');
+                    } else if (value.length < 8) {
+                        strengthText.textContent = 'Medium Password';
+                        strengthText.classList.add('medium');
+                    } else if (validatePassword(value)) {
+                        strengthText.textContent = 'Strong Password';
+                        strengthText.classList.add('strong');
+                    } else {
+                        strengthText.textContent = 'Medium Password';
+                        strengthText.classList.add('medium');
+                    }
+                };
+
+                const validateForm = () => {
+                    let isValid = true;
+
+                    if (!validateName(fullNameInput.value)) {
+                        showError('fullNameError', 'Please enter a valid name with letters only.');
+                        isValid = false;
+                    } else {
+                        clearError('fullNameError');
+                    }
+
+                    if (!emailInput.value.trim()) {
+                        showError('emailError', 'Email is required.');
+                        isValid = false;
+                    } else if (!validateEmail(emailInput.value)) {
+                        showError('emailError', 'Please enter a valid email address.');
+                        isValid = false;
+                    } else {
+                        clearError('emailError');
+                    }
+
+                    if (!validateMobile(mobileInput.value)) {
+                        showError('mobileError', 'Mobile number must contain exactly 10 digits.');
+                        isValid = false;
+                    } else {
+                        clearError('mobileError');
+                    }
+
+                    if (!validatePassword(passwordInput.value)) {
+                        showError('passwordError', 'Password must be at least 8 characters and include a letter and number.');
+                        isValid = false;
+                    } else {
+                        clearError('passwordError');
+                    }
+
+                    if (!confirmPasswordInput.value) {
+                        showError('confirmPasswordError', 'Please confirm your password.');
+                        isValid = false;
+                    } else if (passwordInput.value !== confirmPasswordInput.value) {
+                        showError('confirmPasswordError', 'Passwords do not match.');
+                        isValid = false;
+                    } else {
+                        clearError('confirmPasswordError');
+                    }
+
+                    if (!courseInput.value) {
+                        showError('courseError', 'Please select your course.');
+                        isValid = false;
+                    } else {
+                        clearError('courseError');
+                    }
+
+                    if (!yearInput.value) {
+                        showError('yearError', 'Please select your academic year.');
+                        isValid = false;
+                    } else {
+                        clearError('yearError');
+                    }
+
+                    const selectedGender = [...genderInputs].some((input) => input.checked);
+                    if (!selectedGender) {
+                        showError('genderError', 'Please select your gender.');
+                        isValid = false;
+                    } else {
+                        clearError('genderError');
+                    }
+
+                    if (!termsInput.checked) {
+                        showError('termsError', 'You must accept the terms and conditions.');
+                        isValid = false;
+                    } else {
+                        clearError('termsError');
+                    }
+
+                    if (isValid) {
+                        successMessage.textContent = 'Registration successful! Please check your email for confirmation.';
+                    } else {
+                        successMessage.textContent = '';
+                    }
+
+                    return isValid;
+                };
+
+                passwordInput.addEventListener('input', updatePasswordStrength);
+                passwordInput.addEventListener('input', () => {
+                    if (confirmPasswordInput.value) {
+                        if (passwordInput.value !== confirmPasswordInput.value) {
+                            showError('confirmPasswordError', 'Passwords do not match.');
+                        } else {
+                            clearError('confirmPasswordError');
+                        }
+                    }
+                });
+
+                registrationForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    validateForm();
+                });
+
+                registrationForm.addEventListener('reset', () => {
+                    setTimeout(() => {
+                        clearError('fullNameError');
+                        clearError('emailError');
+                        clearError('mobileError');
+                        clearError('passwordError');
+                        clearError('confirmPasswordError');
+                        clearError('courseError');
+                        clearError('yearError');
+                        clearError('genderError');
+                        clearError('termsError');
+                        clearError('enrollmentError');
+                        clearError('addressError');
+                        passwordStrength.textContent = '';
+                        successMessage.textContent = '';
+                        passwordStrength.className = 'strength-text';
+                    }, 0);
+                });
+            </script>
             <aside class="content-panel">
                 <p class="eyebrow">A good place to begin</p>
                 <h2>Bring your campus life together.</h2>
@@ -92,5 +300,26 @@
         </div>
     </main>
     <footer class="site-footer"><p>Student Hub · A better-connected campus</p></footer>
+    <script>
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            if (toggle) {
+                toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+                toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            }
+        };
+
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+        toggle?.addEventListener('click', () => {
+            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', nextTheme);
+            applyTheme(nextTheme);
+        });
+    </script>
 </body>
 </html>
