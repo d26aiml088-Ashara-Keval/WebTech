@@ -1,0 +1,17 @@
+[
+  { "id": 1, "name": "Aarav Mehta", "department": "Computer Science", "year": 2, "interests": ["Web development", "Robotics"] },
+  { "id": 2, "name": "Diya Sharma", "department": "Electronics", "year": 3, "interests": ["Embedded systems", "Music"] },
+  { "id": 3, "name": "Kabir Nair", "department": "Mechanical Engineering", "year": 1, "interests": ["Design", "Cycling"] },
+  { "id": 4, "name": "Anaya Iyer", "department": "Computer Science", "year": 4, "interests": ["Data science", "Reading"] },
+  { "id": 5, "name": "Ishaan Patel", "department": "Business", "year": 2, "interests": ["Entrepreneurship", "Football"] },
+  { "id": 6, "name": "Meera Das", "department": "Design", "year": 3, "interests": ["Illustration", "Photography"] },
+  { "id": 7, "name": "Rohan Kapoor", "department": "Electronics", "year": 1, "interests": ["Robotics", "Chess"] },
+  { "id": 8, "name": "Sara Thomas", "department": "Computer Science", "year": 3, "interests": ["Accessibility", "Music"] },
+  { "id": 9, "name": "Vivaan Rao", "department": "Mechanical Engineering", "year": 4, "interests": ["Sustainability", "Basketball"] },
+  { "id": 10, "name": "Aditi Sen", "department": "Business", "year": 1, "interests": ["Marketing", "Writing"] },
+  { "id": 11, "name": "Arjun Kulkarni", "department": "Design", "year": 2, "interests": ["User experience", "Gaming"] },
+  { "id": 12, "name": "Nisha Reddy", "department": "Computer Science", "year": 1, "interests": ["Artificial intelligence", "Dance"] },
+  { "id": 13, "name": "Dev Malhotra", "department": "Electronics", "year": 4, "interests": ["Renewable energy", "Tennis"] },
+  { "id": 14, "name": "Tara Fernandes", "department": "Mechanical Engineering", "year": 2, "interests": ["3D printing", "Hiking"] },
+  { "id": 15, "name": "Neel Joshi", "department": "Business", "year": 3, "interests": ["Finance", "Volunteering"] }
+]

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search, filter, sort, and paginate campus data loaded from JSON with the Fetch API.">
+    <title>Student Hub | JSON Data Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="Dashboard.html">Dashboard</a>
+                <a href="events.html">Events</a>
+                <a href="practical-6.html" aria-current="page">Data Explorer</a>
+                <a href="faq.html">FAQ</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+                <a href="profile.html">Profile</a>
+                <a href="admin.html">Admin</a>
+                <a href="login.html">Login</a>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>Dark mode</button>
+        </div>
+    </header>
+    <main class="page-shell">
+        <header class="page-intro">
+            <p class="eyebrow">Practical 6 · Fetch API</p>
+            <h1>Campus data, made useful.</h1>
+            <p class="lede">Explore event listings, student profiles, and FAQs loaded from external JSON files. Search, filter, sort, and browse six records at a time.</p>
+        </header>
+
+        <section class="data-explorer" aria-labelledby="explorer-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Live JSON views</p>
+                    <h2 id="explorer-title">Explore the data</h2>
+                </div>
+                <p id="result-count" aria-live="polite"></p>
+            </div>
+            <div class="explorer-controls">
+                <div class="form-field">
+                    <label for="dataset">Data to explore</label>
+                    <select id="dataset">
+                        <option value="events">Events</option>
+                        <option value="students">Students</option>
+                        <option value="faqs">FAQs</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="search">Search</label>
+                    <input id="search" type="search" placeholder="Search all fields..." autocomplete="off">
+                </div>
+                <div class="form-field">
+                    <label id="filter-label" for="filter">Category</label>
+                    <select id="filter" aria-label="Filter by category">
+                        <option value="">Loading filters...</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="sort">Sort by</label>
+                    <select id="sort">
+                        <option value="">Default order</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="direction">Direction</label>
+                    <select id="direction">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="loading" class="data-message" role="status">Loading JSON data…</p>
+            <p id="error" class="data-message error-message" role="alert" hidden></p>
+            <p id="empty" class="data-message" role="status" hidden>No records match your search and filter.</p>
+            <div id="records" class="data-grid" aria-live="polite"></div>
+            <div id="pagination" class="pagination" hidden>
+                <button id="previous" class="button-secondary" type="button">Previous</button>
+                <span id="page-status" aria-live="polite"></span>
+                <button id="next" class="button-secondary" type="button">Next</button>
+            </div>
+            <p id="source-note" class="source-note" aria-live="polite"></p>
+        </section>
+
+        <section class="content-panel practical-notes" aria-labelledby="notes-title">
+            <p class="eyebrow">How it works</p>
+            <h2 id="notes-title">Fetch, transform, render</h2>
+            <p><code>fetch()</code> loads a JSON array, <code>response.json()</code> parses it, and ES modules separate data loading, reusable rendering, and page behavior.</p>
+            <p>Array <code>filter()</code> powers search and category selection, <code>sort()</code> orders matching records, and <code>slice()</code> selects each page. The latest successful response is cached in localStorage for offline fallback.</p>
+        </section>
+    </main>
+    <footer class="site-footer"><p>Student Hub · Practical 6: Rendering External JSON Data</p></footer>
+    <script>
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            if (toggle) {
+                toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+                toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            }
+        };
+
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+        toggle?.addEventListener('click', () => {
+            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', nextTheme);
+            applyTheme(nextTheme);
+        });
+    </script>
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

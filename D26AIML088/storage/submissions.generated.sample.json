@@ -1,0 +1,19 @@
+[
+  {
+    "id": "a1b2c3d4e5f60718",
+    "submittedAt": "2026-10-22T00:00:00+00:00",
+    "type": "contact",
+    "name": "Riya Shah",
+    "email": "riya@example.edu",
+    "message": "Please share the workshop schedule."
+  },
+  {
+    "id": "b2c3d4e5f6071829",
+    "submittedAt": "2026-10-22T00:05:00+00:00",
+    "type": "registration",
+    "name": "Arjun Rao",
+    "email": "arjun@example.edu",
+    "enrollment": "STU-2026/42",
+    "course": "BTech"
+  }
+]

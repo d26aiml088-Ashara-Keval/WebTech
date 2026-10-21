@@ -1,0 +1,17 @@
+[
+  { "id": 1, "question": "How do I create a Student Hub account?", "category": "Accounts", "answer": "Open the Register page and complete the form with your student details." },
+  { "id": 2, "question": "I forgot my password. What should I do?", "category": "Accounts", "answer": "Use the password reset option on the Login page or contact the campus support desk." },
+  { "id": 3, "question": "Where can I find upcoming campus events?", "category": "Events", "answer": "Visit the Events page or use the JSON Data Explorer to search and filter event listings." },
+  { "id": 4, "question": "Can I join an event without a team?", "category": "Events", "answer": "Yes. Event organizers can help individual students find a team when they arrive." },
+  { "id": 5, "question": "How do I update my profile information?", "category": "Accounts", "answer": "Open your Profile page and update the fields you want to change." },
+  { "id": 6, "question": "Where can I get help with coursework?", "category": "Learning", "answer": "Check the learning support resources or ask your course mentor for guidance." },
+  { "id": 7, "question": "How can I contact the Student Hub team?", "category": "Support", "answer": "Use the Contact page to send a message to the Student Hub team." },
+  { "id": 8, "question": "Are campus workshops open to beginners?", "category": "Events", "answer": "Most workshops welcome beginners; check the event description for any prerequisites." },
+  { "id": 9, "question": "Where can I see my course updates?", "category": "Learning", "answer": "Your Dashboard provides a quick overview of student information and updates." },
+  { "id": 10, "question": "How do I request a student ID?", "category": "Services", "answer": "Submit a request through the student services section on the Register page." },
+  { "id": 11, "question": "Can I change my registered email address?", "category": "Accounts", "answer": "Update your contact details in your profile or ask the support team for help." },
+  { "id": 12, "question": "Who can attend campus community events?", "category": "Events", "answer": "Events marked open to students are available to all currently enrolled students." },
+  { "id": 13, "question": "How do I submit feedback about the website?", "category": "Support", "answer": "Use the Feedback page to share a suggestion or report a problem." },
+  { "id": 14, "question": "Can I find internship preparation support?", "category": "Career", "answer": "Visit the Career Center or attend an internship preparation event listed on the Events page." },
+  { "id": 15, "question": "What should I do if a page does not load?", "category": "Support", "answer": "Refresh the page and check your connection. If the problem continues, contact the Student Hub team." }
+]

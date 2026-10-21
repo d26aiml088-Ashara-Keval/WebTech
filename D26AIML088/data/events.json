@@ -1,0 +1,17 @@
+[
+  { "id": 1, "title": "Web Development Workshop", "category": "Workshop", "date": "2027-08-15", "location": "Innovation Lab", "description": "Build a responsive website and practice modern HTML, CSS, and JavaScript." },
+  { "id": 2, "title": "Campus Hackathon", "category": "Technology", "date": "2027-08-25", "location": "Main Auditorium", "description": "Team up with other students to turn a creative idea into a working prototype." },
+  { "id": 3, "title": "Photography Walk", "category": "Community", "date": "2027-09-03", "location": "North Gate", "description": "Explore campus through your camera and learn a few composition techniques." },
+  { "id": 4, "title": "Resume Writing Clinic", "category": "Career", "date": "2027-09-08", "location": "Career Center", "description": "Get practical feedback on your resume from the campus careers team." },
+  { "id": 5, "title": "Robotics Open Lab", "category": "Technology", "date": "2027-09-14", "location": "Engineering Block, Room 104", "description": "Meet the robotics club and experiment with beginner-friendly projects." },
+  { "id": 6, "title": "Mindful Study Hour", "category": "Wellness", "date": "2027-09-19", "location": "Library Garden", "description": "Take a calm study break with guided breathing and quiet reflection." },
+  { "id": 7, "title": "Startup Idea Sprint", "category": "Career", "date": "2027-09-24", "location": "Business School, Room 12", "description": "Work in small groups to shape an idea into a simple business concept." },
+  { "id": 8, "title": "Open Mic Evening", "category": "Community", "date": "2027-10-02", "location": "Student Commons", "description": "Share music, poetry, comedy, or simply enjoy performances from campus." },
+  { "id": 9, "title": "Introduction to Data Science", "category": "Workshop", "date": "2027-10-07", "location": "Computer Lab 2", "description": "Discover how data can answer questions with a hands-on beginner session." },
+  { "id": 10, "title": "Green Campus Cleanup", "category": "Community", "date": "2027-10-12", "location": "East Courtyard", "description": "Help care for shared campus spaces and meet fellow volunteers." },
+  { "id": 11, "title": "Design Thinking Jam", "category": "Workshop", "date": "2027-10-18", "location": "Design Studio", "description": "Practice a collaborative process for solving everyday problems." },
+  { "id": 12, "title": "Board Games Social", "category": "Community", "date": "2027-10-23", "location": "Student Commons", "description": "Bring a favorite game or try something new with other students." },
+  { "id": 13, "title": "Cybersecurity Awareness Talk", "category": "Technology", "date": "2027-10-29", "location": "Main Auditorium", "description": "Learn practical ways to protect your accounts, devices, and personal data." },
+  { "id": 14, "title": "Internship Preparation Q&A", "category": "Career", "date": "2027-11-04", "location": "Career Center", "description": "Ask recruiters and student mentors how to prepare for internship applications." },
+  { "id": 15, "title": "Campus Sports Day", "category": "Wellness", "date": "2027-11-10", "location": "Sports Ground", "description": "Join friendly team games and try activities for every fitness level." }
+]

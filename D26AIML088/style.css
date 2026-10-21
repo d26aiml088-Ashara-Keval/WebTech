@@ -134,7 +134,9 @@ body.dark-mode .feature-card,
 body.dark-mode .content-panel,
 body.dark-mode .stat-card,
 body.dark-mode .event-card,
-body.dark-mode .registration-form {
+body.dark-mode .registration-form,
+body.dark-mode .data-card,
+body.dark-mode .data-explorer {
     background: #1c2a34;
     border-color: #334854;
     color: #edf4f2;
@@ -315,7 +317,9 @@ h3 {
 .content-panel,
 .stat-card,
 .event-card,
-.registration-form {
+.registration-form,
+.data-card,
+.data-explorer {
     padding: 20px;
     border: 1px solid var(--line);
     border-radius: 5px;
@@ -442,6 +446,46 @@ h3 {
     font-weight: 700;
 }
 
+.practical-form-grid { align-items: start; }
+
+.practical-form-grid > section h2 { margin-bottom: 18px; }
+
+.form-feedback {
+    margin: 0 0 18px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--panel);
+}
+
+.form-feedback-success {
+    border-color: #77aa88;
+    color: #17683f;
+}
+
+.form-feedback-error {
+    border-color: #bc3636;
+    color: #a32929;
+}
+
+.honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+body.dark-mode .form-feedback {
+    background: #1c2a34;
+    border-color: #334854;
+}
+
+body.dark-mode .form-feedback-success { color: #92d1aa; }
+body.dark-mode .form-feedback-error { color: #ffaaaa; }
+
 .form-field input::placeholder { color: #7a8580; }
 
 .choice-group {
@@ -498,6 +542,88 @@ h3 {
 
 .dashboard-section { margin-top: 26px; }
 .event-grid { margin-top: 22px; }
+
+.data-explorer { margin-top: 20px; }
+
+.explorer-controls {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+}
+
+.data-card h3 { margin: 10px 0; }
+
+.data-tag {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--soft);
+    color: var(--green-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.record-detail,
+.data-description {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+.data-message {
+    padding: 12px 14px;
+    border-radius: 4px;
+    background: var(--soft);
+}
+
+.data-message[hidden],
+.pagination[hidden] { display: none; }
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.pagination button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.source-note {
+    min-height: 1.4em;
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.practical-notes { margin-top: 24px; }
+.practical-notes p { color: var(--muted); }
+
+body.dark-mode .data-tag,
+body.dark-mode .data-message {
+    background: #263d47;
+    color: #e8f1ef;
+}
+
+body.dark-mode .record-detail,
+body.dark-mode .data-description,
+body.dark-mode .source-note,
+body.dark-mode .practical-notes p {
+    color: #c7d5d2;
+}
+
+body.dark-mode .explorer-controls .form-field label {
+    color: #edf4f2;
+}
 
 .event-card {
     display: flex;
@@ -569,14 +695,18 @@ h3 {
 
     .feature-grid,
     .about-grid,
-    .event-grid {
+    .event-grid,
+    .data-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
     }
 
+    .explorer-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
     .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .about-layout,
     .dashboard-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .practical-form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .form-field-wide { grid-column: 1 / -1; }
 
@@ -599,4 +729,6 @@ h3 {
         grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
     }
     .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .data-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .explorer-controls { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
