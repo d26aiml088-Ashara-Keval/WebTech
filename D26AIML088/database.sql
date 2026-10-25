@@ -1,5 +1,8 @@
--- Practical 9 user-registration tables.
--- Import after practical-8.sql, which creates the studenthub database.
+-- StudentHub database and Practical 9 registration tables.
+
+CREATE DATABASE IF NOT EXISTS studenthub
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
 
 USE studenthub;
 

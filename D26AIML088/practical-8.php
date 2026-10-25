@@ -16,7 +16,8 @@ $studentError = '';
 $counts = [];
 
 try {
-    $connection = require __DIR__ . '/db.php';
+    require_once __DIR__ . '/db.php';
+    $connection = createPdoConnection();
 
     foreach (['students', 'events', 'registrations'] as $table) {
         $statement = $connection->query('SELECT COUNT(*) FROM ' . $table);
@@ -71,7 +72,7 @@ if ($connection instanceof PDO && $email !== '') {
                 <a href="practical-6.html">Data Explorer</a>
                 <a href="practical-7.php">Practical 7</a>
                 <a href="practical-8.php" aria-current="page">Practical 8</a>
-                <a href="practical-9.php">Practical 9</a>
+                <a href="register.php">Practical 9</a>
             </nav>
             <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>Dark mode</button>
         </div>
