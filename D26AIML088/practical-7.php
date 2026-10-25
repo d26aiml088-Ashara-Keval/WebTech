@@ -240,6 +240,8 @@ http_response_code($responseStatus);
                 <a href="practical-6.html">Data Explorer</a>
                 <a href="contact.html">Contact</a>
                 <a href="practical-7.php" aria-current="page">Practical 7</a>
+                <a href="practical-8.php">Practical 8</a>
+                <a href="practical-9.php">Practical 9</a>
             </nav>
             <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>Dark mode</button>
         </div>
