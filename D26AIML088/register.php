@@ -205,6 +205,7 @@ if ($requestMethod === 'POST') {
             <p class="eyebrow">Practical 9 · Secure Registration</p>
             <h1>Create your StudentHub account.</h1>
             <p class="lede">Frontend and backend validation, duplicate username/email checks, MySQLi prepared statements, hashed passwords, and a CSRF-protected registration form.</p>
+            <p><a class="button-link" href="practical-9-connection.php">Test the database connection</a></p>
         </header>
 
         <?php if ($success !== ''): ?>

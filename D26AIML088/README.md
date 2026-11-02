@@ -32,10 +32,11 @@ Add the directives to the Apache configuration used for this local project. An e
 
 ### Open and test the registration page
 
-1. Visit `http://localhost/D26AIML088/register.php`.
-2. Register a test user with a unique username and email address.
-3. In phpMyAdmin, open `studenthub.users` and confirm the new row exists. The `password_hash` column must contain a hash, not the password.
-4. Try submitting blank fields, an invalid email, a password shorter than 8 characters, mismatching passwords, and the same email or username again. The form should reject each invalid or duplicate case.
+1. Visit `http://localhost/D26AIML088/practical-9-connection.php` and confirm the connected status and `users`/`registration_audit` counts.
+2. Capture the connection status for your Practical 9 evidence, then visit `http://localhost/D26AIML088/register.php`.
+3. Register a test user with a unique username and email address.
+4. In phpMyAdmin, open `studenthub.users` and confirm the new row exists. The `password_hash` column must contain a hash, not the password.
+5. Try submitting blank fields, an invalid email, a password shorter than 8 characters, mismatching passwords, and the same email or username again. The form should reject each invalid or duplicate case.
 
 `practical-9.php` remains as a compatibility URL and loads `register.php`. Practical 8 continues to use PDO through the same `db.php` configuration, while Practical 9 uses MySQLi.
 
@@ -44,6 +45,7 @@ Add the directives to the Apache configuration used for this local project. An e
 - `register.php` — registration form and server-side handling.
 - `db.php` — shared PDO/MySQLi connection functions using environment variables.
 - `database.sql` — database, users table, unique constraints, and audit table.
+- `practical-9-connection.php` — live MySQLi connection check and table counts for screenshot evidence.
 - `test-report.md` — test scenarios, expected results, and honest execution status.
 - `PRACTICAL-9-SCREENSHOTS.md` — manual screenshot capture checklist.
 
