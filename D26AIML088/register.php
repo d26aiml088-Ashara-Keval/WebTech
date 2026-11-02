@@ -139,6 +139,15 @@ if ($requestMethod === 'POST') {
                         $audit->bind_param('iss', $userId, $action, $ipAddress);
                         $audit->execute();
 
+                        $activity = $connection->prepare(
+                            'INSERT INTO audit_log (actor_user_id, action, entity_type, entity_id, ip_address)
+                             VALUES (?, ?, ?, ?, ?)'
+                        );
+                        $activityAction = 'user_registered';
+                        $entityType = 'user';
+                        $activity->bind_param('issis', $userId, $activityAction, $entityType, $userId, $ipAddress);
+                        $activity->execute();
+
                         $connection->commit();
                         $success = 'Your account was created successfully.';
                         $values = ['display_name' => '', 'username' => '', 'email' => ''];
@@ -156,7 +165,7 @@ if ($requestMethod === 'POST') {
                 }
 
                 $duplicateCheck->close();
-            } catch (mysqli_sql_exception | RuntimeException $exception) {
+            } catch (RuntimeException $exception) {
                 error_log('Practical 9 registration error: ' . $exception->getMessage());
                 $errors['form'] = 'Registration could not be completed. Check the database configuration and try again.';
                 $responseStatus = 500;
@@ -187,14 +196,14 @@ if ($requestMethod === 'POST') {
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
             <nav class="site-nav" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="register.html">Register</a>
-                <a href="events.html">Events</a>
+                <a href="index.php">Home</a>
+                <a href="events.php">Events</a>
+                <a href="login.php">Log in</a>
+                <a href="register.php" aria-current="page">Register</a>
                 <a href="practical-7.php">Practical 7</a>
                 <a href="practical-8.php">Practical 8</a>
-                <a href="register.php" aria-current="page">Practical 9</a>
             </nav>
             <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>Dark mode</button>
         </div>

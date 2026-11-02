@@ -23,7 +23,7 @@ try {
         $statement = $connection->query('SELECT COUNT(*) FROM ' . $table);
         $counts[$table] = (int) $statement->fetchColumn();
     }
-} catch (PDOException | RuntimeException $exception) {
+} catch (RuntimeException $exception) {
     error_log('Practical 8 database connection error: ' . $exception->getMessage());
     $connection = null;
     $databaseError = 'The database connection or connection test failed. Check the local MySQL service and the database settings.';
@@ -64,11 +64,12 @@ if ($connection instanceof PDO && $email !== '') {
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
+            <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true">S</span> Student Hub</a>
             <nav class="site-nav" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="register.html">Register</a>
-                <a href="events.html">Events</a>
+                <a href="index.php">Home</a>
+                <a href="events.php">Events</a>
+                <a href="login.php">Log in</a>
+                <a href="register.php">Register</a>
                 <a href="practical-6.html">Data Explorer</a>
                 <a href="practical-7.php">Practical 7</a>
                 <a href="practical-8.php" aria-current="page">Practical 8</a>

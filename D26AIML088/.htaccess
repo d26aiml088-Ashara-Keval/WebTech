@@ -1,0 +1,11 @@
+Options -Indexes
+DirectoryIndex index.php index.html
+RewriteEngine On
+RewriteRule ^(?:app|db|event-functions)\.php$ - [F,L]
+RewriteRule ^partials(?:/|$) - [F,L]
+RewriteRule ^index\.html$ index.php [R=302,L]
+RewriteRule ^register\.html$ register.php [R=302,L]
+RewriteRule ^login\.html$ login.php [R=302,L]
+RewriteRule ^events\.html$ events.php [R=302,L]
+RewriteRule ^(?:Dashboard|dashboard)\.html$ dashboard.php [R=302,L]
+RewriteRule ^admin\.html$ admin.php [R=302,L]
